@@ -8,6 +8,8 @@ import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 
+import com.utils.StringHelper;
+
 /**
  * @desc  : TODO
  * @author: Zhu
@@ -22,10 +24,9 @@ public class CustomCredentialsMatcher extends HashedCredentialsMatcher {
 		//这里就可以换成自己的加密方式 
 		//tokenHashedCredentials是提交的密码
 		//accountCredentials是保存的密码
-        Object tokenHashedCredentials = hashProvidedCredentials(token, info);
+        String tokenHashedCredentials = String.valueOf(hashProvidedCredentials(token, info));
         
-        Object accountCredentials = getCredentials(info);
-        equals(tokenHashedCredentials, accountCredentials);
+        String accountCredentials = StringHelper.sha1Hex(String.valueOf(getCredentials(info)));
         return equals(tokenHashedCredentials, accountCredentials);
     }
 }

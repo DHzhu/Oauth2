@@ -78,10 +78,10 @@ var Container = function(isPagination, tableId) {
     	}
     }
     
-    object.getAjaxInfo = function(params){
+    object.getAjaxInfo = function(url,params){
     	$.ajax({
     		type:"post",
-    		url:params.url,
+    		url:url,
     		data:params,
     		dataType:"json",
     		timeout: 30000,

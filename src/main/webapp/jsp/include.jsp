@@ -1,17 +1,19 @@
-<!-- main JS libs -->
-<script src="<%=request.getContextPath()%>/public/js/libs/modernizr.min.js"></script>
-<script src="<%=request.getContextPath()%>/public/js/libs/jquery-1.10.0.js"></script>
-<script src="<%=request.getContextPath()%>/public/js/libs/jquery-ui.min.js"></script>
-<script src="<%=request.getContextPath()%>/public/js/libs/bootstrap.min.js"></script>
+<!-- bootstrap -->
+<link href="<%=request.getContextPath()%>/public/css/bootstrap/bootstrap.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/public/css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet">
 
-<!-- Style CSS -->
-<link href="<%=request.getContextPath()%>/public/css/bootstrap.css" media="screen" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/public/css/style.css" media="screen" rel="stylesheet">
+<!-- global styles -->
+<link href="<%=request.getContextPath()%>/public/css/compiled/layout.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/public/css/compiled/elements.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/public/css/compiled/icons.css" rel="stylesheet" type="text/css">
+
+<!-- libraries -->
+<link href="<%=request.getContextPath()%>/public/css/lib/font-awesome.css" rel="stylesheet" type="text/css">
+
 
 <!-- scripts -->
-<script src="<%=request.getContextPath()%>/public/js/general.js"></script>
-<!-- custom input -->
-<script src="<%=request.getContextPath()%>/public/js/jquery.customInput.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/public/js/custom.js"></script>
-<!-- Placeholders -->
-<script type="text/javascript" src="<%=request.getContextPath()%>/public/js/jquery.powerful-placeholder.min.js"></script>
+<script src="<%=request.getContextPath()%>/public/js/jquery-latest.js"></script>
+<script src="<%=request.getContextPath()%>/public/js/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath()%>/public/js/jquery.min.js"></script>
+<script src="<%=request.getContextPath()%>/public/js/theme.js"></script>
+<script src="<%=request.getContextPath()%>/public/js/public.js"></script>

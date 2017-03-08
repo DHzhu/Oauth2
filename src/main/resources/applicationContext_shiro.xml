@@ -10,10 +10,10 @@
 	http://www.springframework.org/schema/aop/spring-aop-4.2.xsd 
 	http://www.springframework.org/schema/util  
     http://www.springframework.org/schema/util/spring-util-4.2.xsd">
-	<context:component-scan base-package="com.sse" />
+	<context:component-scan base-package="com" />
 
 	<!-- 密码验证策略 -->
-	<bean id="customCredentialsMatcher" class="com.sse.security.CustomCredentialsMatcher">
+	<bean id="customCredentialsMatcher" class="com.security.CustomCredentialsMatcher">
 		<property name="hashAlgorithmName" value="SHA-1" />
 	</bean>
 
@@ -45,7 +45,6 @@
 				<!-- 拦截配置 anno表示不拦截 -->
 				/public/** = anon
 				/login.do = anon
-				/doLogin.do = anon
 				/logout.do = anon
 				/** = authc
 			</value>

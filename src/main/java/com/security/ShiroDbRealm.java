@@ -13,8 +13,10 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.model.User;
+import com.service.UserService;
 
 /**
  * @desc  : TODO
@@ -23,6 +25,9 @@ import com.model.User;
  */
 @SuppressWarnings("unused")
 public class ShiroDbRealm extends AuthorizingRealm{
+	
+	@Autowired
+	private UserService userService;
 	
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -40,11 +45,27 @@ public class ShiroDbRealm extends AuthorizingRealm{
 		
 		User user = new User();
 		user.setUserName(upToken.getUsername());
-		//User admin = adminUserServiceImpl.getUser(user);
-		if(user == null) {
+		User admin = userService.getUser(user);
+		if(admin == null) {
 			throw new UnknownAccountException();
 		}
-		return new SimpleAuthenticationInfo(user,user.getPassword(),String.valueOf(user.getId()));
+		return new SimpleAuthenticationInfo(admin,admin.getPassword(),String.valueOf(user.getId()));
+	}
+
+
+	/**
+	 * 
+	 */
+	public UserService getUserService() {
+		return userService;
+	}
+
+
+	/**
+	 * 
+	 */
+	public void setUserService(UserService userService) {
+		this.userService = userService;
 	}
 
 }
