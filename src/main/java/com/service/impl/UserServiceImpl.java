@@ -43,18 +43,4 @@ public class UserServiceImpl implements UserService{
 		return userDao.getUser(user);
 	}
 
-	/**
-	 * 
-	 */
-	public UserDao getUserDao() {
-		return userDao;
-	}
-
-	/**
-	 * 
-	 */
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
-
 }

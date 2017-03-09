@@ -21,7 +21,7 @@
 		</li>
 
 		<li>
-			<a href="login.do"> 
+			<a href="client.do"> 
 				<i class="icon-calendar-empty"></i>
 				<span>授权管理</span>
 			</a>

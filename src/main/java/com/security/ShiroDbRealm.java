@@ -79,21 +79,4 @@ public class ShiroDbRealm extends AuthorizingRealm{
         clearAllCachedAuthenticationInfo();
         clearAllCachedAuthorizationInfo();
     }
-
-
-	/**
-	 * 
-	 */
-	public UserService getUserService() {
-		return userService;
-	}
-
-
-	/**
-	 * 
-	 */
-	public void setUserService(UserService userService) {
-		this.userService = userService;
-	}
-
 }

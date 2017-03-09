@@ -73,21 +73,4 @@ public class ClientServiceImpl implements ClientService{
 		// TODO Auto-generated method stub
 		clientDao.updateClient(client);
 	}
-
-	/**
-	 * 
-	 */
-	public ClientDao getClientDao() {
-		return clientDao;
-	}
-
-	/**
-	 * 
-	 */
-	public void setClientDao(ClientDao clientDao) {
-		this.clientDao = clientDao;
-	}
-
-
-
 }

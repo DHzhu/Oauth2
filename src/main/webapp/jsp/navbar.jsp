@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 <header class="navbar navbar-inverse" role="banner">
@@ -40,7 +41,7 @@
 			</div></li>
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
-				你的账号 <b class="caret"></b>
+				<shiro:principal property="userName" /> <b class="caret"></b>
 			</a>
 			<ul class="dropdown-menu">
 				<li><a href="personalInfo.do"><i class="icon-cog"></i>&nbsp;&nbsp;个人信息</a></li>
