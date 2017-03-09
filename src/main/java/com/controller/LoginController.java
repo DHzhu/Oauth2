@@ -64,6 +64,6 @@ public class LoginController {
 		if(subject.isAuthenticated()){
 			subject.logout();
 		}
-		return "login";
+		return "redirect:/login.do"; 
 	}
 }
