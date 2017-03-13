@@ -30,17 +30,17 @@
 
 		<div class="box">
 			<div class="content-wrap">
-				<h6>登录</h6>
+				<h6>使用Oauth2账号登录，并访问${client.clientName}</h6>
 				<form action="" id="loginForm">
-					<input class="form-control" type="text" placeholder="用户名" name="userName" id="userName"/> 
-					<input class="form-control" type="password" placeholder="密码" name="password" id="password"/> 
-					<input type="hidden"  name="random" id="random" value=""/>
+					<input class="form-control" type="text" placeholder="用户名" name="userName" id="userName"> 
+					<input class="form-control" type="password" placeholder="密码" name="password" id="password"> 
+					<input type="hidden"  name="random" id="random" value="">
 					<a href="#" class="forgot">忘记密码?</a>
 					<div class="remember">
 						<!-- <input id="remember-me" type="checkbox"/> <label for="remember-me">记住密码</label> -->
 						<label id="result" style="color:red;">${result}</label>
 					</div>
-					<a class="btn-glow primary login" href="#" onclick="getLogin()" id="loginBtn">登录</a>
+					<a class="btn-glow primary login" href="#" onclick="getLogin()" id="loginBtn">登录并授权</a>
 				</form>
 			</div>
 		</div>

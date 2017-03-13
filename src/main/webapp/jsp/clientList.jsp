@@ -15,7 +15,7 @@
 	var heads=[];
 	heads[0] = {"code":"clientName",classes:"center"};
 	heads[1] = {"code":"clientId",classes:"center"};
-	heads[2] = {"code":"clientKey",classes:"center"};
+	heads[2] = {"code":"clientSecret",classes:"center"};
 	heads[3] = {"code":"id",formatter:contendLink,classes:"center"};
 	
 	dataList.error = function(XMLHttpRequest, textStatus, errorThrown){
@@ -36,7 +36,7 @@
 						<tr> 
 							<th>客户端名称</th>
 							<th>客户端ID</th>
-							<th>客户端KEY</th>
+							<th>客户端Secret</th>
 							<th>操作</th>
 						</tr> 
 					</thead> 

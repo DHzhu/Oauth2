@@ -15,7 +15,7 @@ public class Client extends BaseEntiy{
 	private int id;
 	private String clientName;
 	private String clientId;
-	private String clientKey;
+	private String clientSecret;
 	/**
 	 * 
 	 */
@@ -55,13 +55,13 @@ public class Client extends BaseEntiy{
 	/**
 	 * 
 	 */
-	public String getClientKey() {
-		return clientKey;
+	public String getClientSecret() {
+		return clientSecret;
 	}
 	/**
 	 * 
 	 */
-	public void setClientKey(String clientKey) {
-		this.clientKey = clientKey;
+	public void setClientSecret(String clientSecret) {
+		this.clientSecret = clientSecret;
 	}
 }

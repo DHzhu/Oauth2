@@ -3,6 +3,7 @@
  */
 package com.service.impl;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +51,7 @@ public class ClientServiceImpl implements ClientService{
 	public void addClient(Client client) {
 		// TODO Auto-generated method stub
 		client.setClientId(UUID.randomUUID().toString());
-		client.setClientKey(UUID.randomUUID().toString());
+		client.setClientSecret(UUID.randomUUID().toString());
 		clientDao.addClient(client);
 	}
 
@@ -72,5 +73,19 @@ public class ClientServiceImpl implements ClientService{
 	public void updateClient(Client client) {
 		// TODO Auto-generated method stub
 		clientDao.updateClient(client);
+	}
+
+	/**
+	 * @desc : TODO
+	 * @date : 2017年3月13日
+	 */
+	@Override
+	public Client getClient(Client client) {
+		// TODO Auto-generated method stub
+		List<Client> clients = clientDao.getClients(client);
+		if(clients == null || clients.size() < 1){
+			return null;
+		}
+		return clients.get(0);
 	}
 }
