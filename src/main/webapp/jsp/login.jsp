@@ -21,6 +21,7 @@
 		$("#random").val(Math.floor(Math.random() * (100000 + 1)));
 		$("#loginForm").submit();
 	};
+	$("#loginBtn").bind("keypress",getLogin());
 </script>
 <body class="login-bg">
 	<div class="login-wrapper">
@@ -39,7 +40,7 @@
 						<!-- <input id="remember-me" type="checkbox"/> <label for="remember-me">记住密码</label> -->
 						<label id="result" style="color:red;">${result}</label>
 					</div>
-					<a class="btn-glow primary login" href="#" onclick="getLogin()">登录</a>
+					<a class="btn-glow primary login" href="#" onclick="getLogin()" id="loginBtn">登录</a>
 				</form>
 			</div>
 		</div>

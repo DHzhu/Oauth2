@@ -361,7 +361,7 @@
             
             var countHtml = "<li><a style='margin-left:30px;'>共" + this.options.total + "条" + this.options.totalPages +"页</a></li>" +
             				"<li><a style='padding:0px;border:0px;'><div class='input-group' style='width:95px;margin:-2px,-2px'>" +
-            				"<input type='text' id='pageGoInput' class='form-control'  onkeyup=\"if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\\D/g,'')}\" onblur=\"if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\\D/g,'')}\">" 
+            				"<input type='text' id='pageGoInput' class='form-control' style='height:31px;'  onkeyup=\"if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\\D/g,'')}\" onblur=\"if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\\D/g,'')}\">" 
             				+ "<span class='input-group-addon' id='pageGoBtn'>GO</span></div></a></li>";
             listContainer.append(countHtml);
         },

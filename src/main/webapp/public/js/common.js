@@ -54,7 +54,7 @@ var Container = function(isPagination, tableId) {
     		var options = {
 				currentPage: data.pageNo,
 				totalPages: data.pages,
-				numberOfPages: data.pageSize,
+				numberOfPages: 5,
 				total: data.total,
 				onPageClicked:function(event, originalEvent, type, page){
 					var params = object.params;
@@ -74,7 +74,7 @@ var Container = function(isPagination, tableId) {
     			gotoPage = gotoPage > totalPage ? totalPage : gotoPage;
     			var params = object.params;
 				params.pageNo = gotoPage;
-				object.getAjaxInfo(params);
+				object.getAjaxInfo(object.url, params);
     		});
     		$("#pageGoInput").bind("keypress",function(e){
     			var eCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;

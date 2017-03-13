@@ -31,7 +31,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div style="display:block;">
-				<table class="tablesorter" cellspacing="0" id="userList"> 
+				<table class="table table-hover table-striped" cellspacing="0" id="userList"> 
 					<thead>
 						<tr> 
 							<th>客户端名称</th>
