@@ -17,3 +17,6 @@
 <script src="<%=request.getContextPath()%>/public/js/jquery.min.js"></script>
 <script src="<%=request.getContextPath()%>/public/js/theme.js"></script>
 <script src="<%=request.getContextPath()%>/public/js/public.js"></script>
+
+<script src="<%=request.getContextPath()%>/public/js/bootstrap-paginator.js"></script>
+<script src="<%=request.getContextPath()%>/public/js/common.js"></script>

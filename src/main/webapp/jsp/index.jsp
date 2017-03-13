@@ -24,7 +24,7 @@
 	<!-- sidebar end -->
 	
 	<!-- main container -->
-    <div class="content">
+    <div class="content" id="pageContent">
     	
     </div>
 </body>

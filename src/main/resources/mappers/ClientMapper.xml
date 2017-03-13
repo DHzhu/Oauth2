@@ -11,7 +11,7 @@
 	<select id="getClients" resultMap="client" parameterType="com.model.Client">
 		select * from oauth_client a
 		where 1=1
-		<if test="id != null">
+		<if test="id != null and id > 0">
 			AND a.id = ${id}
 		</if>
 		<if test="clientName != null and clientName != ''">

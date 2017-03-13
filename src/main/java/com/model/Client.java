@@ -3,14 +3,12 @@
  */
 package com.model;
 
-import java.io.Serializable;
-
 /**
  * @desc  : TODO
  * @author: Zhu
  * @date  : 2017年3月7日
  */
-public class Client implements Serializable{
+public class Client extends BaseEntiy{
 
 	private static final long serialVersionUID = 4067418994149624981L;
 	

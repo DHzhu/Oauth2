@@ -44,4 +44,11 @@ public class IndexController {
 		
 		return clientService.getClients(pageResult, client).toString();
 	}
+	
+	@RequestMapping(value = "/user.do")
+	public String showUser(HttpServletRequest request,Map<String, Object> map){
+		
+		return "userProfile";
+	}
+	
 }

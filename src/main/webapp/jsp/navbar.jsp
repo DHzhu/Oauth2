@@ -44,7 +44,7 @@
 				<shiro:principal property="userName" /> <b class="caret"></b>
 			</a>
 			<ul class="dropdown-menu">
-				<li><a href="personalInfo.do"><i class="icon-cog"></i>&nbsp;&nbsp;个人信息</a></li>
+				<li><a href="#" value="user.do" onclick="showPage()"><i class="icon-cog"></i>&nbsp;&nbsp;个人信息</a></li>
 			</ul>
 		</li>
 

@@ -2,10 +2,14 @@ $.ajaxSetup({
     async: true,
     global: false,
     complete:function(XMLHttpRequest,textStatus){
-        var info = jQuery.parseJSON(XMLHttpRequest.responseText);
-        if(info.success == false && info.msg == "timeout"){
-        	window.location.href = 'index.do';
-        }
+    	try{
+    		var info = jQuery.parseJSON(XMLHttpRequest.responseText);
+            if(info.success == false && info.msg == "timeout"){
+            	window.location.href = 'index.do';
+            }
+    	}catch(e){
+    		
+    	}
     }
 });
 var Container = function(isPagination, tableId) {
@@ -14,15 +18,17 @@ var Container = function(isPagination, tableId) {
     object.tableId = tableId;
     object.headAarry;
     object.params;
+    object.url;
     object.error = null;
     
-    object.showInfo = function(headers,params) {
+    object.showInfo = function(headers,params,url) {
     	object.headAarry = headers;
-    	object.params = params;;
+    	object.params = params;
+    	object.url = url;
         if (headers == null || headers == undefined || headers.length == 0) {
             return
         };
-        object.getAjaxInfo(params);
+        object.getAjaxInfo(url, params);
     }
     
     object.render = function(data){
@@ -52,8 +58,9 @@ var Container = function(isPagination, tableId) {
 				total: data.total,
 				onPageClicked:function(event, originalEvent, type, page){
 					var params = object.params;
+					var url = object.url;
 					params.pageNo = page;
-					object.getAjaxInfo(params);
+					object.getAjaxInfo(url, params);
 				}
 			}
 			$("#staticPage").bootstrapPaginator(options);
@@ -81,7 +88,7 @@ var Container = function(isPagination, tableId) {
     object.getAjaxInfo = function(url,params){
     	$.ajax({
     		type:"post",
-    		url:url,
+    		url:url + "?" + Math.floor(Math.random() * (100000 + 1)),
     		data:params,
     		dataType:"json",
     		timeout: 30000,
