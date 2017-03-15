@@ -6,6 +6,10 @@
 
 	<display-name>Oauth2</display-name>
 	<context-param>
+	    <param-name>webAppRootKey</param-name>
+	    <param-value>Oauth2</param-value>
+	</context-param>
+	<context-param>
 		<param-name>log4jConfigLocation</param-name>
 		<param-value>classpath:log4j.properties</param-value>
 	</context-param>
