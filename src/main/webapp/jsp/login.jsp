@@ -21,7 +21,15 @@
 		$("#random").val(Math.floor(Math.random() * (100000 + 1)));
 		$("#loginForm").submit();
 	};
-	$("#loginBtn").bind("keypress",getLogin());
+	$(function(){
+		$("#password").keypress(function(e){
+			var eCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+			if(eCode == 13){
+				getLogin();
+			}
+		});
+	});
+	
 </script>
 <body class="login-bg">
 	<div class="login-wrapper">
