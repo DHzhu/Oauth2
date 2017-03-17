@@ -38,7 +38,7 @@ public class TouchResourceController {
     private OAuthService oAuthService;
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping("/getResource")
+	@RequestMapping("/getResource.do")
     public HttpEntity getResource(HttpServletRequest request) throws OAuthSystemException {
         try {
 

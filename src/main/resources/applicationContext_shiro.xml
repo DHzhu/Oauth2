@@ -96,9 +96,9 @@
 				/public/** = anon
 				/login.do = anon
 				/logout.do = anon
-				/authorize = anon
-				/getToken = anon
-				/getResource = anon
+				/authorize.do = anon
+				/getToken.do = anon
+				/getResource.do = anon
 				/** = authc
 			</value>
 		</property>

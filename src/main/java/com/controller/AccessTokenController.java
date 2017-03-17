@@ -41,7 +41,7 @@ public class AccessTokenController {
     private OAuthService oAuthService;
     
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping("/getToken")
+	@RequestMapping("/getToken.do")
 	public HttpEntity token(HttpServletRequest request) throws URISyntaxException, OAuthSystemException {
 
         try {

@@ -56,7 +56,7 @@ public class AuthorizeController {
 	private ClientService clientService;
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping("/authorize")
+	@RequestMapping("/authorize.do")
 	public Object authorize(Model model, HttpServletRequest request) throws URISyntaxException, OAuthSystemException {
 
 		try {
