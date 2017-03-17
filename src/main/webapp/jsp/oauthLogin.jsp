@@ -21,7 +21,14 @@
 		$("#random").val(Math.floor(Math.random() * (100000 + 1)));
 		$("#loginForm").submit();
 	};
-	$("#loginBtn").bind("keypress",getLogin());
+	$(function(){
+		$("#password").keypress(function(e){
+			var eCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+			if(eCode == 13){
+				getLogin();
+			}
+		});
+	});
 </script>
 <body class="login-bg">
 	<div class="login-wrapper">
@@ -30,12 +37,16 @@
 
 		<div class="box">
 			<div class="content-wrap">
-				<h6>使用Oauth2账号登录，并访问${client.clientName}</h6>
+				<h6 style="font-size:14px;">使用Oauth2账号登录，并访问${client.clientName}</h6>
 				<form action="" id="loginForm">
 					<input class="form-control" type="text" placeholder="用户名" name="userName" id="userName"> 
 					<input class="form-control" type="password" placeholder="密码" name="password" id="password"> 
+					<input type="hidden"  name="response_type" value="${responseType}">
+					<input type="hidden"  name="redirect_uri" value="${redirecUri}">
+					<input type="hidden"  name="scope" value="${scope}">
+					<input type="hidden"  name="client_id" value="${client.clientId}">
 					<input type="hidden"  name="random" id="random" value="">
-					<a href="#" class="forgot">忘记密码?</a>
+					
 					<div class="remember">
 						<!-- <input id="remember-me" type="checkbox"/> <label for="remember-me">记住密码</label> -->
 						<label id="result" style="color:red;">${result}</label>

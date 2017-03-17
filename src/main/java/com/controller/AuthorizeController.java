@@ -84,6 +84,9 @@ public class AuthorizeController {
 
 				if (StringHelper.isEmpty(userName) || StringHelper.isEmpty(password)) {
 					model.addAttribute("client", clientR);
+					model.addAttribute("redirecUri", oauthRequest.getRedirectURI());
+					model.addAttribute("responseType", oauthRequest.getResponseType());
+					model.addAttribute("scope", oauthRequest.getScopes());
 					return "oauthLogin";
 				}
 
@@ -107,6 +110,9 @@ public class AuthorizeController {
 
 				if (!flag) {
 					model.addAttribute("client", clientR);
+					model.addAttribute("redirecUri", oauthRequest.getRedirectURI());
+					model.addAttribute("responseType", oauthRequest.getResponseType());
+					model.addAttribute("scope", oauthRequest.getScopes());
 					return "oauthLogin";
 				}
 			}
