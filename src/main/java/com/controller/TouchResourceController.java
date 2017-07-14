@@ -3,6 +3,9 @@
  */
 package com.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -62,7 +65,9 @@ public class TouchResourceController {
             }
             //返回用户名
             String username = oAuthService.getUsernameByAccessToken(accessToken);
-            return new ResponseEntity(username, HttpStatus.OK);
+            Map<String, String> map = new HashMap<>();
+            map.put("username", username);
+            return new ResponseEntity(map, HttpStatus.OK);
         } catch (OAuthProblemException e) {
             //检查是否设置了错误码
             String errorCode = e.getError();
