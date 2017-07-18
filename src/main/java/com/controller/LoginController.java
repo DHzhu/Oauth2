@@ -14,6 +14,8 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.utils.StringHelper;
 
@@ -59,10 +61,13 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/logout.do")
-	public String doLogout(){
+	public Object doLogout(String url){
 		Subject subject = SecurityUtils.getSubject();
 		if(subject.isAuthenticated()){
 			subject.logout();
+		}
+		if(url != null && !url.equals("")){
+			return  new ModelAndView(new RedirectView(url));
 		}
 		return "redirect:/login.do"; 
 	}
